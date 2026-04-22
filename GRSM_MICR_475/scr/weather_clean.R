@@ -5,7 +5,7 @@ library(lubridate)
 files <- list.files(path = "Data/NEON_precip-throughfall", full.names = TRUE)
 precip <- do.call(rbind, lapply(files, read.csv))
 
-#Format date times
+#Format date times to just year and month
 
 precip$startDateTime <- format(as.Date(precip$startDateTime), "%Y-%m")
 
